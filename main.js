@@ -7,8 +7,6 @@ window.addEventListener("load", () => {
     e.preventDefault();
 
     const taskText = input.value.trim();
-
-    // Prevent empty task
     if (taskText === "") {
       alert("Please enter a task");
       return;
@@ -34,10 +32,12 @@ window.addEventListener("load", () => {
 
     const editBtn = document.createElement("button");
     editBtn.classList.add("edit");
+    editBtn.type = "button";
     editBtn.innerText = "Edit";
 
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete");
+    deleteBtn.type = "button";
     deleteBtn.innerText = "Delete";
 
     actions.appendChild(editBtn);
@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
     list.appendChild(task);
     input.value = "";
 
-    // Edit task
+    //  EDIT WORKS
     editBtn.addEventListener("click", () => {
       if (editBtn.innerText === "Edit") {
         editBtn.innerText = "Save";
@@ -59,7 +59,7 @@ window.addEventListener("load", () => {
       }
     });
 
-    // Delete task
+    //  DELETE WORKS
     deleteBtn.addEventListener("click", () => {
       list.removeChild(task);
     });
